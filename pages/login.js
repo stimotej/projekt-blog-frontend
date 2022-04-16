@@ -33,7 +33,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
     if (token) router.push("/");
-  }, []);
+  }, [router]);
 
   return (
     <div className="h-screen flex flex-row items-center justify-center bg-gray-50">

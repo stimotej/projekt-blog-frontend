@@ -3,13 +3,10 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import { MdChevronLeft } from "react-icons/md";
 import axios from "axios";
-import { useRouter } from "next/router";
 import Loader from "../components/Loader";
 import { MdPersonAdd } from "react-icons/md";
 
 const Profile = () => {
-  const router = useRouter();
-
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

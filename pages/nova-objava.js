@@ -6,7 +6,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Loader from "../components/Loader";
 
-const newPost = () => {
+const NewPost = () => {
   const router = useRouter();
 
   const [image, setImage] = useState("");
@@ -110,4 +110,4 @@ const newPost = () => {
   );
 };
 
-export default newPost;
+export default NewPost;

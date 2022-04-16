@@ -6,7 +6,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Loader from "../../components/Loader";
 
-const editPost = () => {
+const EditPost = () => {
   const router = useRouter();
   const { id } = router.query;
 
@@ -130,4 +130,4 @@ const editPost = () => {
   );
 };
 
-export default editPost;
+export default EditPost;
