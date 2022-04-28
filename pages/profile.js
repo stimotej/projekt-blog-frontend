@@ -21,7 +21,7 @@ const Profile = () => {
     if (user.role === "Admin") setIsAdmin(true);
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/admin/${user.id}`, {
+      .get(`/admin/${user.id}`, {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -41,7 +41,7 @@ const Profile = () => {
     setLoading(true);
     axios
       .patch(
-        `http://localhost:5000/api/admin/${user.id}`,
+        `/admin/${user.id}`,
         {
           name,
           username,

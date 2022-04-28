@@ -23,7 +23,7 @@ const Register = () => {
     setLoading(true);
     axios
       .post(
-        "http://localhost:5000/api/admin/register",
+        "/admin/register",
         {
           username,
           password,

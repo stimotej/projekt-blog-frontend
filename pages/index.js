@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Layout from "../components/Layout";
 import Tabs from "../components/Tabs";
 import BlogPost from "../components/BlogPost";
@@ -23,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/posts")
+      .get("/posts")
       .then((response) => setPosts(response.data))
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));

@@ -23,7 +23,7 @@ const NewPost = () => {
     setLoading(true);
     axios
       .post(
-        "http://localhost:5000/api/posts",
+        "/posts",
         {
           image,
           title,

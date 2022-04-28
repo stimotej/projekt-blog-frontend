@@ -22,7 +22,7 @@ const EditPost = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/posts/${id}`)
+      .get(`/posts/${id}`)
       .then((response) => {
         setImage(response.data.image);
         setTitle(response.data.title);
@@ -40,7 +40,7 @@ const EditPost = () => {
     setLoading(true);
     axios
       .patch(
-        `http://localhost:5000/api/posts/${id}`,
+        `/posts/${id}`,
         {
           image,
           title,

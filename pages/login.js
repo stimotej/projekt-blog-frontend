@@ -17,14 +17,15 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:5000/api/admin/login", { username, password })
+      .post("/admin/login", { username, password })
       .then((response) => {
         localStorage.setItem("auth_token", response.data.token);
         localStorage.setItem("user", JSON.stringify(response.data.user));
         router.push("/");
       })
       .catch((error) => {
-        if (error.response.status === 400)
+        console.log(error.response);
+        if (error.response?.status === 400)
           setError("Pogrešno korisničko ime ili lozinka.");
       })
       .finally(() => setLoading(false));

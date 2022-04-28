@@ -33,7 +33,7 @@ const Objava = () => {
 
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/posts/${id}`)
+      .get(`/posts/${id}`)
       .then((response) => {
         setPost(response.data);
       })
@@ -45,7 +45,7 @@ const Objava = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`http://localhost:5000/api/posts/${id}/comments`, {
+      .post(`/posts/${id}/comments`, {
         body,
         name,
       })
@@ -62,7 +62,7 @@ const Objava = () => {
     const token = localStorage.getItem("auth_token");
     if (confirm("Jeste li sigurni da želite obrisati ovu objavu?"))
       axios
-        .delete(`http://localhost:5000/api/posts/${id}`, {
+        .delete(`/posts/${id}`, {
           headers: { "auth-token": token },
         })
         .then(() => {
@@ -75,7 +75,7 @@ const Objava = () => {
     const token = localStorage.getItem("auth_token");
     if (confirm("Jeste li sigurni da želite obrisati ovaj komentar?"))
       axios
-        .delete(`http://localhost:5000/api/posts/${id}/comments/${commentId}`, {
+        .delete(`/posts/${id}/comments/${commentId}`, {
           headers: { "auth-token": token },
         })
         .then((response) => {
